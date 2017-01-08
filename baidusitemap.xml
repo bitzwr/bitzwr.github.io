@@ -3,6 +3,30 @@
 
 
     
+    
+    
+  <url>
+    <loc>http://wangbiao.org/Java/jdk-HashMap/</loc>
+    <lastmod>2017-01-08T13:53:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>HashMap原理解析</title>
+        <pubTime>2017-01-06T17:39:46.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>JDK</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://wangbiao.org/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://wangbiao.org/Java/log4j/</loc>
     <lastmod>2016-01-28T04:18:07.000Z</lastmod>
@@ -42,7 +66,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://wangbiao.org/my/hello-world/</loc>
