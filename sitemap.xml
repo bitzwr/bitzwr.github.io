@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangbiao.org/Java/jdk-HashMap/</loc>
+    
+    <lastmod>2017-01-08T14:07:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangbiao.org/book_list/index.html</loc>
     
-    <lastmod>2017-01-08T14:01:49.000Z</lastmod>
+    <lastmod>2017-01-08T14:03:33.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://wangbiao.org/about/index.html</loc>
     
     <lastmod>2017-01-08T13:56:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangbiao.org/Java/jdk-HashMap/</loc>
-    
-    <lastmod>2017-01-08T13:53:47.000Z</lastmod>
     
   </url>
   
