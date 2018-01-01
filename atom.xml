@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangbiao.org/"/>
-  <updated>2017-01-08T14:07:55.000Z</updated>
+  <updated>2016-01-28T04:17:55.000Z</updated>
   <id>http://wangbiao.org/</id>
   
   <author>
@@ -14,31 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>HashMap原理解析</title>
-    <link href="http://wangbiao.org/Java/jdk-HashMap/"/>
-    <id>http://wangbiao.org/Java/jdk-HashMap/</id>
-    <published>2017-01-06T17:39:46.000Z</published>
-    <updated>2017-01-08T14:07:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>HashMap是Java语言中对于Hash算法的一种应用<br><a id="more"></a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HashMap是Java语言中对于Hash算法的一种应用&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://wangbiao.org/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://wangbiao.org/tags/Java/"/>
-    
-      <category term="JDK" scheme="http://wangbiao.org/tags/JDK/"/>
-    
-  </entry>
   
   <entry>
     <title>配置本地yum源</title>
@@ -90,78 +65,13 @@
   </entry>
   
   <entry>
-    <title>Java日志工具-log4j</title>
-    <link href="http://wangbiao.org/Java/log4j/"/>
-    <id>http://wangbiao.org/Java/log4j/</id>
-    <published>2015-12-13T12:41:13.000Z</published>
-    <updated>2016-01-28T04:18:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>日志是记录软件运行状态的工具，是软件中不可或缺的部分。<a href="http://www.apache.org" target="_blank" rel="external">Apache</a>的开源项目<a href="http://http://logging.apache.org/log4j/1.2/index.html" target="_blank" rel="external">log4j</a>是一个功能强大的日志组件，比jdk提供的日志组件更加方便。</p>
-<a id="more"></a>
-<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><p>Log4j主要分为3部分，Logers、Appenders、Layouts。其中Logger用来设置日志的类型和级别，Appender决定日志的输出地方，Layout用于设置日志信息的格式。</p>
-<h3 id="Logger"><a href="#Logger" class="headerlink" title="Logger"></a>Logger</h3><p>日志的级别包括: TRACE、DEBUG、INFO、WAEN、ERROR、FATAL。日志级别递增，在开发调试过程中一般使用DEBUG级别，生产环境中使用INFO级别。</p>
-<h3 id="Appender"><a href="#Appender" class="headerlink" title="Appender"></a>Appender</h3><ul>
-<li>ConsoleAppender (控制台)</li>
-<li>FileAppender (文件)</li>
-<li>DaliyRollingFileAppender (每天产生一个日志文件)</li>
-<li>RollingFileAppender (文件大小到达指定尺寸时产生一个新文件)</li>
-<li>WriteAppender (将日志信息以流格式发送到任意指定的地方)</li>
-<li>JDBCAppender (将日志信息保存到数据库中)</li>
-</ul>
-<p>常用的是前四个, 具体使用方法参照示例部分。</p>
-<h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><ul>
-<li>HTMLLayout (以HTML表格形式布局)</li>
-<li>SimpleLayout (简单布局:包含日志信息的级别和信息字符串)</li>
-<li>TTCCLayout (包含日志产生时间、执行者、类别等信息)</li>
-<li>PatternLayout (可以灵活地指定布局格式，最为常用)</li>
-</ul>
-<h4 id="布局信息"><a href="#布局信息" class="headerlink" title="布局信息"></a>布局信息</h4><p>通常适用org.apache.log4j.PatternLayout来指定。</p>
-<ul>
-<li>%c 输出日志信息所属类的全名</li>
-<li>%d 输出日志的时间,默认格式为ISO8601,可以在其后指定格式,%d{yyyy-MM-dd HH:mm:ss:SSS},输出结构: 2016-01-24 15:53:14:999</li>
-<li>%F 输出日志所属类的类名</li>
-<li>%l 输出日志发生的位置，效果等同 %c.%M(%F:%L)</li>
-<li>%L 输出日志的语句在代码中的行号</li>
-<li>%m 输出代码中指定的信息,message</li>
-<li>%M 输出日志所在的方法名, 格式: &lt;methodName&gt;</li>
-<li>%n 输出一个行号符,Win平台下为”\r\n”, Unix平台为”\n”</li>
-<li>%p 输出日志级别</li>
-<li>%r 输出自应用启动到输出该日志所消耗的毫秒数</li>
-<li>%t 输出日志的线程名</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="log4j-properties"><a href="#log4j-properties" class="headerlink" title="log4j.properties"></a>log4j.properties</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">log4j.rootLogger=debug, stdout, R</div><div class="line"></div><div class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</div><div class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</div><div class="line"></div><div class="line"># Pattern to output the caller&apos;s file name and line number.   </div><div class="line">log4j.appender.stdout.layout.ConversionPattern=%5p [%t] (%F:%L) - %m%n</div><div class="line"></div><div class="line">log4j.appender.R=org.apache.log4j.RollingFileAppender</div><div class="line">log4j.appender.R.File=example.log</div><div class="line"></div><div class="line">log4j.appender.R.MaxFileSize=100KB   </div><div class="line"># Keep one backup file   </div><div class="line">log4j.appender.R.MaxBackupIndex=1</div><div class="line"></div><div class="line">log4j.appender.R.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n</div></pre></td></tr></table></figure>
-<h4 id="log4j-xml"><a href="#log4j-xml" class="headerlink" title="log4j.xml"></a>log4j.xml</h4><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE log4j:configuration SYSTEM "./xsd/log4j.dtd"&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span> <span class="attr">xmlns:log4j</span>=<span class="string">"http://jakarta.apache.org/log4j/"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"CONSOLE"</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.ConsoleAppender"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.PatternLayout"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"ConversionPattern"</span> <span class="attr">value</span>=<span class="string">"%d - %p %c&#123;1&#125;.%M(%L) | %m%n"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.varia.LevelRangeFilter"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"LevelMax"</span> <span class="attr">value</span>=<span class="string">"FATAL"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"LevelMin"</span> <span class="attr">value</span>=<span class="string">"DEBUG"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></div><div class="line">    </div><div class="line">  <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"FILE"</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.RollingFileAppender"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"File"</span> <span class="attr">value</span>=<span class="string">"$&#123;user.home&#125;/app/logs/system.log"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"encoding"</span> <span class="attr">value</span>=<span class="string">"GBK"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"Append"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"MaxFileSize"</span> <span class="attr">value</span>=<span class="string">"10485760"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"MaxBackupIndex"</span> <span class="attr">value</span>=<span class="string">"1000"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.PatternLayout"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"ConversionPattern"</span> <span class="attr">value</span>=<span class="string">"%d - %p [%t] %c.%M(%L) | %m%n"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.varia.LevelRangeFilter"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"LevelMax"</span> <span class="attr">value</span>=<span class="string">"FATAL"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"LevelMin"</span> <span class="attr">value</span>=<span class="string">"DEBUG"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 可以为指定的包指定logger --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"org.springframework"</span> <span class="attr">additivity</span>=<span class="string">"false"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">"ERROR"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"CONSOLE"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></div><div class="line">    </div><div class="line">  <span class="tag">&lt;<span class="name">root</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">"INFO"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"CONSOLE"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">root</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>log4j组件在工程中会默认加载classpath下的log4j.properties或者log4j.xml文件。适用于所有项目。</p>
-<h4 id="在spring项目中使用"><a href="#在spring项目中使用" class="headerlink" title="在spring项目中使用"></a>在spring项目中使用</h4><p>在web.xml文件中添加以下内容。 </p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Log4j的配置文件路径<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:log4j.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 这种方式配置文件名可以不是log4j.properties和log4j.xml --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 开一条watchdog线程每60秒扫描一下配置文件的变化 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>log4jRefreshInterval<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>60000<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>启动log4j的监听器<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.util.Log4jConfigListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 添加其他内容 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a href="http://logging.apache.org/log4j/1.2/manual.html" target="_blank" rel="external">http://logging.apache.org/log4j/1.2/manual.html</a></li>
-<li><a href="http://spiritfrog.iteye.com/blog/197552" target="_blank" rel="external">http://spiritfrog.iteye.com/blog/197552</a></li>
-<li><a href="http://www.cnblogs.com/alipayhutu/archive/2012/06/21/2558249.html" target="_blank" rel="external">http://www.cnblogs.com/alipayhutu/archive/2012/06/21/2558249.html</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;日志是记录软件运行状态的工具，是软件中不可或缺的部分。&lt;a href=&quot;http://www.apache.org&quot;&gt;Apache&lt;/a&gt;的开源项目&lt;a href=&quot;http://http://logging.apache.org/log4j/1.2/index.html&quot;&gt;log4j&lt;/a&gt;是一个功能强大的日志组件，比jdk提供的日志组件更加方便。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://wangbiao.org/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://wangbiao.org/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="http://wangbiao.org/my/hello-world/"/>
     <id>http://wangbiao.org/my/hello-world/</id>
     <published>2015-11-17T06:57:51.000Z</published>
-    <updated>2015-11-18T04:37:04.000Z</updated>
+    <updated>2018-01-01T07:03:37.758Z</updated>
     
-    <content type="html"><![CDATA[<p>在不断的折腾中，这个博客终于搭建起来了。<br>当看到博客被加载出来的时候，我再次体会到了第一次写代码成功打印出“Hello World”时的那种兴奋。<br>这不是QQ空间，不是新浪博客，也不是豆瓣小站，而是完完全全属于我自己的一亩三分地，给予我一种无以复加的归属感。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>在不断的折腾中，这个博客终于搭建起来了。<br>当看到博客被加载出来的时候，我再次体会到了第一次写代码成功打印出“Hello World”时的那种兴奋。<br>这是完完全全属于我自己的一亩三分地，给予我一种无以复加的归属感。<br><a id="more"></a></p>
 <h4 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h4><p>当我知道博客的概念的时候，我就疯狂地注册了各个主流博客。也曾很认真的维护过一个博客(胸无点墨，以唯美图片代博文)。后来不了了之，因为游戏总是充满魅力。搞技术伊始，把博客定居到了博客园(号称开发者的网上家园)。但是本人是属于懒癌晚期的那种，平时的想法、经验、零碎的知识点，都是很随意的记录在印象笔记里。在博客园的博客也仅仅是占了个坑，而已。  </p>
 <h4 id="关于学习"><a href="#关于学习" class="headerlink" title="关于学习"></a>关于学习</h4><p>学习需要不断的尝试、总结、再尝试、再总结…只到把一个知识给吃透。在之前的学习中并没有这么一个好习惯，总是在遇到问题的时候，浅尝辄止，一旦解决问题，就赶紧撒手，即便有些记录，但是终归没有总结消化。而问题依旧是问题，它就在那里。以至于会在同一个问题上反复，浪费生命。<br>以博客为载体，记录学习的艰辛历程。</p>
 <h4 id="给自己的"><a href="#给自己的" class="headerlink" title="给自己的"></a>给自己的</h4><p>没有谁能够随随便便的获得想要的东西，‘想要’和‘得到’之间还是差着俩字-‘做到’。<br>走出舒适区，寻找最真实的自己！</p>
@@ -170,7 +80,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;在不断的折腾中，这个博客终于搭建起来了。&lt;br&gt;当看到博客被加载出来的时候，我再次体会到了第一次写代码成功打印出“Hello World”时的那种兴奋。&lt;br&gt;这不是QQ空间，不是新浪博客，也不是豆瓣小站，而是完完全全属于我自己的一亩三分地，给予我一种无以复加的归属感。&lt;br&gt;
+      &lt;p&gt;在不断的折腾中，这个博客终于搭建起来了。&lt;br&gt;当看到博客被加载出来的时候，我再次体会到了第一次写代码成功打印出“Hello World”时的那种兴奋。&lt;br&gt;这是完完全全属于我自己的一亩三分地，给予我一种无以复加的归属感。&lt;br&gt;
     
     </summary>
     
