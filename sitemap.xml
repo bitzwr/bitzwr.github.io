@@ -2,30 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wangbiao.org/my/hello-world/</loc>
+    <loc>https://wangbiao.org/Java-Core/HashMap-jdk-1-7/</loc>
+    
+    <lastmod>2018-06-10T03:24:45.002Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangbiao.org/linux/local-yum/</loc>
+    
+    <lastmod>2018-06-09T12:21:32.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangbiao.org/about/index.html</loc>
+    
+    <lastmod>2018-06-09T08:00:40.451Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangbiao.org/tags/index.html</loc>
+    
+    <lastmod>2018-06-09T07:59:40.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangbiao.org/categories/index.html</loc>
+    
+    <lastmod>2018-06-09T07:58:44.535Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangbiao.org/my/hello-world/</loc>
     
     <lastmod>2018-01-01T07:03:37.758Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangbiao.org/book_list/index.html</loc>
-    
-    <lastmod>2017-01-08T14:03:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangbiao.org/about/index.html</loc>
-    
-    <lastmod>2017-01-08T13:56:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangbiao.org/linux/local-yum/</loc>
-    
-    <lastmod>2016-01-28T04:17:55.000Z</lastmod>
     
   </url>
   
