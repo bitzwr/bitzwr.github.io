@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://wangbiao.org/linux/local-yum/</loc>
+    <lastmod>2018-10-23T14:17:57.482Z</lastmod>
+    <data>
+        <display>
+        <title>配置本地yum源</title>
+        <pubTime>2016-01-03T15:50:28.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="https://wangbiao.org/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangbiao.org/Java/HashMap-jdk-1-7/</loc>
     <lastmod>2018-06-10T07:18:17.909Z</lastmod>
     <data>
@@ -21,26 +41,6 @@
            
              
               <breadCrumb title="Java" url="https://wangbiao.org/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangbiao.org/linux/local-yum/</loc>
-    <lastmod>2018-06-09T12:21:32.810Z</lastmod>
-    <data>
-        <display>
-        <title>配置本地yum源</title>
-        <pubTime>2016-01-03T15:50:28.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="https://wangbiao.org/categories/linux/"/>
           
         </display>
     </data>
